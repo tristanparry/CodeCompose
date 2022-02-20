@@ -1,0 +1,172 @@
+@font-face {
+    font-family: 'Agency FB';
+    src: url('../../fonts/AgencyFB-Reg.woff2') format('woff2'),
+         url('../../fonts/AgencyFB-Reg.woff')  format('woff'),
+         url('../../fonts/AgencyFB-Reg.ttf')   format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@keyframes bounce {
+	0% {
+		transform: translateY(0px);
+	}
+	50% {
+		transform: translateY(15px);
+	}
+	100% {
+		transform: translateY(0px);
+	}
+}
+
+/***********************************************/
+
+:root {
+  --black:                     rgb(0, 0, 0);
+  --medium-grey:               rgb(44, 44, 44);
+  --dark-grey:                 rgb(20, 20, 20);
+  --darker-grey:               rgb(14, 14, 14);
+  --white:                     rgb(255, 255, 255);
+  --accent-colour:             rgb(218, 224, 33);
+  --accent-colour-hover:       rgb(166, 172, 17);
+  --accent-colour-translucent: rgba(218, 224, 33, 0.337);
+}
+
+::-webkit-scrollbar {
+    width: 0.4rem;
+    height: 0.4rem;
+    background-color: var(--darker-grey);
+}
+::-webkit-scrollbar-thumb {
+    background-color: var(--accent-colour);
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--accent-colour-hover);
+}
+
+#editPage { background-color: var(--darker-grey); }
+
+#editPageHeader {
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    height: 70px;
+    background-color: #070707;
+}
+#editPageHeader img {
+    margin-right: 1.5rem;
+    border-radius: 10px;
+    transition: ease 0.3s;
+}
+#editPageHeader input {
+    width: 20%;
+    height: 35px;
+    padding-left: 0.5em;
+    background-color: var(--dark-grey);
+    color: var(--accent-colour);
+    font-family: "Agency FB";
+    font-size: 1.4em;
+    outline: none;
+    border: 2px dashed transparent;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    transition: ease 0.3s;
+}
+#editPageHeader input::placeholder { color: var(--accent-colour-translucent); }
+#editPageHeader button {
+    width: 70px;
+    height: 41px;
+    background-color: rgb(8, 129, 8);
+    color: rgb(240, 240, 240);
+    font-family: "Agency FB";
+    letter-spacing: 0.05rem;
+    outline: none;
+    border: none;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    font-size: 1.15em;
+    transition: ease 0.3s;
+    cursor: pointer;
+}
+#editPageHeader button:hover { background-color: rgb(5, 100, 5); }
+#editPageHeader button:disabled {
+    background-color: rgb(99, 99, 99);
+    cursor: auto;
+}
+#editPageHeader button:disabled:hover {
+    background-color: rgb(99, 99, 99);
+    cursor: auto;
+}
+#editPageHeader #errorMsg {
+    margin-left: 1.5rem;
+    font-family: sans-serif;
+    font-size: 0.9rem;
+    color: red;
+    letter-spacing: 0.02rem;
+}
+
+#downButtonWrapper {
+    height: 70px;
+    padding-top: 40px;
+}
+#downButton {
+    user-select: none;
+    animation: bounce 5s ease-in-out infinite;
+    transition: ease 0.3s;
+}
+
+#codeEditorWrapper {
+    background-color: var(--dark-grey);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 0.8rem 1rem;
+}
+
+.editorHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0.7rem 0 1.2rem;
+    text-align: left;
+    font-family: "Agency FB";
+    font-size: 1.4em;
+    user-select: none;
+    background-color: var(--darker-grey);
+    color: var(--accent-colour);
+    height: 40px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.controlledEditor {
+    text-align: left;
+    overflow-y: scroll;
+    border-bottom-left-radius: 10px;
+}
+
+.codeEditor {
+    width: 31.5%;
+    margin: 1rem 10px;
+    box-shadow: 0 0 0 2px var(--accent-colour-translucent);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    transition: ease 0.3s;
+}
+
+#renderFrame {
+    width: 100%;
+    height: 100vh;
+    overflow: scroll;
+}
+
+/***********************************************/
+
+@media only screen and (max-width: 700px) {
+    #editPage { height: 100%; }
+    #codeEditorWrapper { flex-direction: column; }
+    .codeEditor { width: 100%; }
+    #downButtonWrapper { display: none; }
+}

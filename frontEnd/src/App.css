@@ -1,0 +1,67 @@
+@font-face {
+  font-family: 'Agency FB';
+  src: url('./fonts/AgencyFB-Reg.woff2') format('woff2'),
+       url('./fonts/AgencyFB-Reg.woff')  format('woff'),
+       url('./fonts/AgencyFB-Reg.ttf')   format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/***********************************************/
+
+:root {
+  --black:                     rgb(0, 0, 0);
+  --medium-grey:               rgb(44, 44, 44);
+  --dark-grey:                 rgb(20, 20, 20);
+  --darker-grey:               rgb(14, 14, 14);
+  --white:                     rgb(255, 255, 255);
+  --accent-colour:             rgb(218, 224, 33);
+  --accent-colour-hover:       rgb(166, 172, 17);
+  --accent-colour-translucent: rgba(218, 224, 33, 0.337);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+}
+
+.App {
+  text-align: center;
+}
+
+#notFound {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: ease 0.3s;
+}
+
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--darker-grey);
+  overflow: hidden;
+}
+
+#logo { margin: 0 0.05em; }
+
+#fourOFour {
+  margin-top: 0.6em;
+  font-family: sans-serif;
+  font-weight: bold;
+  color: var(--accent-colour);
+  font-size: 12em;
+  vertical-align: middle;
+  transition: ease 0.3s;
+}
+
+#errorMsg {
+  font-family: "Agency FB";
+  letter-spacing: 0.1rem;
+  font-size: 2.5em;
+  transition: ease 0.3s;
+  color: var(--white);
+}

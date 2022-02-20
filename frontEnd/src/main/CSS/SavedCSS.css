@@ -1,0 +1,139 @@
+@font-face {
+    font-family: 'Agency FB';
+    src: url('../../fonts/AgencyFB-Reg.woff2') format('woff2'),
+         url('../../fonts/AgencyFB-Reg.woff')  format('woff'),
+         url('../../fonts/AgencyFB-Reg.ttf')   format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/***********************************************/
+
+:root {
+  --black:                     rgb(0, 0, 0);
+  --medium-grey:               rgb(44, 44, 44);
+  --dark-grey:                 rgb(20, 20, 20);
+  --darker-grey:               rgb(14, 14, 14);
+  --white:                     rgb(255, 255, 255);
+  --accent-colour:             rgb(218, 224, 33);
+  --accent-colour-hover:       rgb(166, 172, 17);
+  --accent-colour-translucent: rgba(218, 224, 33, 0.158);
+}
+
+::-webkit-scrollbar {
+    width: 0.4rem;
+    height: 0.4rem;
+    background-color: var(--darker-grey);
+}
+::-webkit-scrollbar-thumb {
+    background-color: var(--accent-colour);
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--accent-colour-hover);
+}
+
+#savedPageWrap {
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--dark-grey);
+}
+
+#header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.2rem 2rem;
+    height: 70px;
+    background-color: #070707;
+}
+#headerInner {
+    display: flex;
+    align-items: center;
+}
+
+#logo_img_saved { margin-right: 25px; }
+
+#header button {
+    width: 55px;
+    height: 35px;
+    background-color: rgb(8, 129, 8);
+    color: rgb(240, 240, 240);
+    font-family: "Agency FB";
+    letter-spacing: 0.05rem;
+    outline: none;
+    border: none;
+    border-radius: 3px;
+    font-size: 1.15em;
+    transition: ease 0.3s;
+    cursor: pointer;
+}
+#header button:hover { background-color: rgb(5, 100, 5); }
+
+.savedProjects {
+    display: flex;
+    flex-direction: column;
+    padding-top: 1.8rem;
+    overflow-y: scroll;
+    height: 70vh;
+}
+
+/*****************************************/
+
+.row {
+    color: var(--accent-colour);
+    font-size: 1.1rem;
+    margin: auto;
+    width: 80%;
+    max-width: 800px;
+    padding: 0.8rem 1em;
+    margin-bottom: 1em;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+    border: 1.5px solid var(--accent-colour);
+    align-items: center;
+    transition: ease 0.2s;
+}
+.row:hover {
+    transform: scaleX(103%);
+    background-color: rgba(218, 224, 33, 0.123);
+}
+.row:hover button {
+    opacity: 1;
+}
+
+.row #logo_arrows_only {
+    margin-right: 1rem;
+}
+
+.row button {
+    margin-left: auto;
+    opacity: 0;
+    transition: ease 0.2s;
+}
+.row button:hover {
+    cursor: pointer;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Agency FB';
+    user-select: none;
+    cursor: pointer;
+}
+
+/*****************************************/
+
+@media only screen and (min-width: 800px) {
+    .info {
+        font-size: 1.4em;
+    }
+    
+    #address {
+        font-size: 1.1em;
+        color: #141414;
+    }
+}
